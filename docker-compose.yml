@@ -11,7 +11,7 @@ services:
      #- 443:443
       - 5060:5060/udp
       - 5160:5160/udp
-      - 18000-18100:18000-18100/udp
+      - 18000-18005:18000-18005/udp
      #### Flash Operator Panel
       - 4445:4445
     volumes:
@@ -22,20 +22,20 @@ services:
      
     environment: 
      #- DEBUG_MODE=TRUE
-      - VIRTUAL_HOST=tel.tonanuvem.com
+      - VIRTUAL_HOST=voip.belaevaidosa.com.br
      #- VIRTUAL_NETWORK=nginx-proxy
       - VIRTUAL_NETWORK=host
      ### If you want to connect to the SSL Enabled Container 
      #- VIRTUAL_PORT=443
      #- VIRTUAL_PROTO=https
       - VIRTUAL_PORT=80
-      - LETSENCRYPT_HOST=tel.tonanuvem.com
+      - LETSENCRYPT_HOST=voip.belaevaidosa.com.br
       - LETSENCRYPT_EMAIL=contato@tonanuvem.net
 
       - ZABBIX_HOSTNAME=freepbx-app
 
       - RTP_START=18000
-      - RTP_FINISH=18100
+      - RTP_FINISH=18005
     
      ## Use for External MySQL Server
       - DB_EMBEDDED=FALSE
